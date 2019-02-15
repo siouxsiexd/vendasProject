@@ -62,7 +62,7 @@ module.exports = {
         });
       }
     } catch (error) {
-      return res.status(400).send({ error: "Restration failed" });
+      return res.status(400).send({ error: "Registration failed" });
     }
   },
 
