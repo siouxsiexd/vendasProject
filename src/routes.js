@@ -4,11 +4,15 @@ const { Group } = require("./models");
 const { Category } = require("./models");
 const { Product } = require("./models");
 const { User } = require("./models");
+const { Comanda } = require("./models");
+const { Pedido } = require("./models");
 
 const GroupController = require("./controllers/GroupController");
 const CategoryController = require("./controllers/CategoryController");
 const ProductController = require("./controllers/ProductController");
 const UserController = require("./controllers/UserController");
+const ComandaController = require("./controllers/ComandaController");
+const PedidoController = require("./controllers/PedidoController");
 
 // Groups Routes
 routes.get("/groups", GroupController.index);
@@ -32,8 +36,22 @@ routes.put("/products/:id", ProductController.update);
 routes.delete("/products/:id", ProductController.destroy);
 
 // User Routes
-routes.get('/user', UserController.allUsers);
-routes.post('/user/register', UserController.newUser);
-routes.post('/user/auth', UserController.authenticate);
+routes.get("/user", UserController.allUsers);
+routes.post("/user/register", UserController.newUser);
+routes.post("/user/auth", UserController.authenticate);
+
+// Comandas Routes
+routes.get("/comandas", ComandaController.index);
+routes.get("/comandas/:id", ComandaController.show);
+routes.post("/comandas/register", ComandaController.store);
+routes.put("/comandas/:id", ComandaController.update);
+routes.delete("/comandas/:id", ComandaController.destroy);
+
+// Pedidos Routes
+routes.get("/pedidos", PedidoController.index);
+routes.get("/pedidos/:id", PedidoController.show);
+routes.post("/pedidos/register", PedidoController.store);
+routes.put("/pedidos/:id", PedidoController.update);
+routes.delete("/pedidos/:id", PedidoController.destroy);
 
 module.exports = routes;
