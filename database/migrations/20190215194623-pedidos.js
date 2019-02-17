@@ -25,6 +25,6 @@ module.exports = {
   },
 
   down: queryInterface => {
-    return queryInterface.dropTable("Comandas");
+    return queryInterface.dropTable("Pedidos");
   }
 };
